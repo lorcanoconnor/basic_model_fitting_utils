@@ -1,11 +1,5 @@
 import pandas as pd
 import numpy as np
-from sklearn.preprocessing import OneHotEncoder
-import statsmodels.api as sm
-from sklearn.ensemble import RandomForestRegressor as RFR, RandomForestClassifier as RFC
-import datetime as datetime
-from matplotlib import pyplot as plt
-import seaborn as sns
 from sklearn.model_selection import train_test_split
 
 
@@ -47,5 +41,4 @@ def simple_non_shuffled_test_train_split(df):
 
 def vcs(data, col=None):
     return data[col].value_counts(normalize=False, dropna=True)
-
 
