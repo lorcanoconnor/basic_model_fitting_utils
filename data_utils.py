@@ -3,6 +3,9 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from ydata_profiling import ProfileReport
 
+from ridge_example import make_example_dataset
+
+
 def impute_random_categorical(X: pd.Series, allowed_vals=None):
     allowed_vals = allowed_vals or X.unique()
     nice_mask = X.isin(allowed_vals)
@@ -42,6 +45,6 @@ def simple_non_shuffled_test_train_split(df):
 def vcs(data, col=None):
     return data[col].value_counts(normalize=False, dropna=True)
 
-def get_eda_report():
+def get_eda_report(df, name='eda_report.html'):
     profile = ProfileReport(df, title="EDA Report", explorative=True)
-    profile.to_file("eda_report.html")
+    profile.to_file(name)
