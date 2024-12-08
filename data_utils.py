@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-
+from ydata_profiling import ProfileReport
 
 def impute_random_categorical(X: pd.Series, allowed_vals=None):
     allowed_vals = allowed_vals or X.unique()
@@ -42,3 +42,6 @@ def simple_non_shuffled_test_train_split(df):
 def vcs(data, col=None):
     return data[col].value_counts(normalize=False, dropna=True)
 
+def get_eda_report():
+    profile = ProfileReport(df, title="EDA Report", explorative=True)
+    profile.to_file("eda_report.html")
