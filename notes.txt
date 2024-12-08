@@ -1,3 +1,5 @@
+Example of basic EDA, data cleaning and model fitting
 https://github.com/ageron/handson-ml2/blob/master/02_end_to_end_machine_learning_project.ipynb
 
-
+ESL:
+https://esl.hohoweiya.xyz/book/The%20Elements%20of%20Statistical%20Learning.pdf
